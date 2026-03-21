@@ -87,7 +87,7 @@
       }
       
       
-      .gallery {
+      #resume {
         margin-top: 20px;
         width: 490px; 
   
@@ -201,7 +201,7 @@
     <div id="mainContent">
      
         <div class="content">   
-          <img src="resumePlaceholder.jpg" class="gallery" alt="placeholder">
+          <img src="resumePlaceholder.jpg" id="resume" alt="placeholder">
         </div>
 
     </div>
@@ -234,18 +234,31 @@
   
   <script>
   // get the avatar image
+  const resumeImg = document.getElementById('resume');
+    
   const avatarImg = document.getElementById('avatar');
 
   // assign click events
-  document.getElementById('hometxt').addEventListener('click', () => {
-  avatarImg.src = '2clickHome.png';
+  document.getElementById('avatar').addEventListener('click', () => {
+  resumeImg.src = 'coolerPlaceholder.jpg';
   });
     
-  document.getElementById('yeg').addEventListener('click', (e) => {
-  e.stopPropagation();  
-  avatarImg.src = 'yegava.png';
-  });
     
+  
+
+  document.getElementById('avatar').addEventListener('click', () => {
+
+  avatarImg.src = "homeAnimation.gif";
+
+  setTimeout(() => {
+    avatarImg.src = "homeFinal.png";
+  }, 1800);
+
+});
+    
+    
+    
+
 
 
 </script>
