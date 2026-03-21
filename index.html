@@ -88,10 +88,11 @@
       
       
       #resume {
-        margin-top: 20px;
-        width: 490px; 
-  
+        margin-top: -140px;
+        width: 490px;
       }
+      
+     
       
       
       /* MAIN CONTENT END */
@@ -160,11 +161,10 @@
     /* DROPDOWN END */
 
       #avatar{
-        position: fixed; 
-        bottom: 0px;        
-        right: 0px;           
-        z-index: 1000;         
         
+        transform: translate( 280px, 500px);      
+            
+        z-index: 1000;         
       }
     
     </style>
@@ -194,7 +194,7 @@
      </div>
     
     
-    <img src="welcome!.png" id="avatar" width="150px" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
+    <img src="pullingAva.gif" id="avatar" width="150px" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
     
   
     
@@ -242,16 +242,13 @@
   document.getElementById('avatar').addEventListener('click', () => {
   resumeImg.src = 'coolerPlaceholder.jpg';
   });
-    
-    
   
-
   document.getElementById('avatar').addEventListener('click', () => {
 
   avatarImg.src = "pulledAva.gif";
 
   setTimeout(() => {
-    avatarImg.src = "homeFinal.png";
+    avatarImg.src = "oopsAva.png";
   }, 350);
 
 });
