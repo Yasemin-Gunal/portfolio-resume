@@ -88,7 +88,7 @@
       
       
       #resume {
-        margin-top: -140px;
+        margin-top: -240px;
         width: 490px;
       }
       
@@ -248,11 +248,16 @@ avatarImg.addEventListener('click', () => {
 
     avatarImg.src = "fellAva.gif";
     avatarImg.style.width = "240px";
+    
+     setTimeout(() => {
+      avatarImg.style.opacity = "0";
+    }, 1600);
 
     setTimeout(() => {
+      avatarImg.style.opacity = "1";
       avatarImg.src = "betterAva.png";
       avatarImg.style.width = "150px";
-    }, 1600);
+    }, 1900);
 
   } else {
 
@@ -260,11 +265,16 @@ avatarImg.addEventListener('click', () => {
 
     avatarImg.src = "fellAva.gif";
     avatarImg.style.width = "240px";
+    
+    setTimeout(() => {
+      avatarImg.style.opacity = "0";
+    }, 1600);
 
     setTimeout(() => {
+      avatarImg.style.opacity = "1";
       avatarImg.src = "oopsAva.png";
       avatarImg.style.width = "150px";
-    }, 1600);
+    }, 1900);
 
   }
 
