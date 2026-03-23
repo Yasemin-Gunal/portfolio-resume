@@ -194,7 +194,7 @@
      </div>
     
     
-    <img src="pullingAva.gif" id="avatar" width="150px" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
+    <img src="pullingAva.gif" id="avatar" width="170px" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
     
   
     
@@ -240,49 +240,35 @@
   const resumeImg = document.getElementById('resume');
   const avatarImg = document.getElementById('avatar');
     
-    
-avatarImg.onload = function () {  //refresh on load (?)
+avatarImg.addEventListener('click', () => {
 
- if (avatarImg.src.includes("pullingAva.gif")) { 
-  avatarImg.style.width = "170px"; 
-   
-   
- } else {
-     avatarImg.style.width = "150px"; 
-     
-   } //if avatar is pulling have diff size
+  if (resumeImg.src.includes('resumePlaceholder.jpg')) {
 
-};
-    
-    
-    document.getElementById('avatar').addEventListener('click', () => {
-       if (resumeImg.src.includes('resumePlaceholder.jpg')) {
-         
-          avatarImg.style.width = "2200px";
-          avatarImg.src = "fellAva.gif";
-         
-          setTimeout(() => {
-          avatarImg.src = "betterAva.png";
-          }, 1600);
-       }
-      });
-    
-    
-    // assign click events
-  document.getElementById('avatar').addEventListener('click', () => {
-    if (resumeImg.src.includes('resumePlaceholder.jpg')) {
-      resumeImg.src = 'coolerPlaceholder.jpg'; 
-    } else {
-      resumeImg.src = 'resumePlaceholder.jpg';
-      
-      avatarImg.style.width = "2200px";
-      avatarImg.src = "fellAva.gif";
+    resumeImg.src = 'coolerPlaceholder.jpg';
 
-      setTimeout(() => {
-      avatarImg.src = "oopsAva.png";
+    avatarImg.src = "fellAva.gif";
+    avatarImg.style.width = "240px";
+
+    setTimeout(() => {
+      avatarImg.src = "betterAva.png";
+      avatarImg.style.width = "150px";
     }, 1600);
 
-  }});
+  } else {
+
+    resumeImg.src = 'resumePlaceholder.jpg';
+
+    avatarImg.src = "fellAva.gif";
+    avatarImg.style.width = "240px";
+
+    setTimeout(() => {
+      avatarImg.src = "oopsAva.png";
+      avatarImg.style.width = "150px";
+    }, 1600);
+
+  }
+
+});
   
   
     
