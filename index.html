@@ -92,6 +92,10 @@
         width: 490px;
       }
       
+       #resume {
+        margin-top: -140px;
+        width: 490px;
+      }
      
       
       
@@ -233,12 +237,27 @@
   
   
   <script>
+    
+    
+    
   // get the avatar image
   const resumeImg = document.getElementById('resume');
-    
   const avatarImg = document.getElementById('avatar');
+    
+    
+resumeImg.onload = function () {  //refresh on load (?)
 
-  // assign click events
+ if (avatarImg.src.includes("pullingAva.gif")) { 
+  avatarImg.style.width = "170px"; 
+ } else {
+     
+     avatarImg.style.width = "150px"; 
+     
+   } //if avatar is pulling have diff size
+
+};
+    
+    // assign click events
   document.getElementById('avatar').addEventListener('click', () => {
   resumeImg.src = 'coolerPlaceholder.jpg';
   });
@@ -250,6 +269,10 @@
   setTimeout(() => {
     avatarImg.src = "oopsAva.png";
   }, 350);
+    
+    
+
+
 
 });
     
