@@ -249,8 +249,9 @@ resumeImg.onload = function () {  //refresh on load (?)
 
  if (avatarImg.src.includes("pullingAva.gif")) { 
   avatarImg.style.width = "170px"; 
+   
+   
  } else {
-     
      avatarImg.style.width = "150px"; 
      
    } //if avatar is pulling have diff size
@@ -260,10 +261,10 @@ resumeImg.onload = function () {  //refresh on load (?)
     
     document.getElementById('avatar').addEventListener('click', () => {
        if (resumeImg.src.includes('resumePlaceholder.jpg')) {
-          avatarImg.src = "pulledAva.gif";
+          avatarImg.src = "fellAva.gif";
           setTimeout(() => {
           avatarImg.src = "betterAva.png";
-          }, 350);
+          }, 2000);
        }
       });
     
@@ -275,11 +276,11 @@ resumeImg.onload = function () {  //refresh on load (?)
     } else {
       resumeImg.src = 'resumePlaceholder.jpg';
 
-      avatarImg.src = "pulledAva.gif";
+      avatarImg.src = "fellAva.gif";
 
       setTimeout(() => {
       avatarImg.src = "oopsAva.png";
-    }, 350);
+    }, 2000);
 
   }});
   
