@@ -257,28 +257,33 @@ resumeImg.onload = function () {  //refresh on load (?)
 
 };
     
+    
+    document.getElementById('avatar').addEventListener('click', () => {
+       if (resumeImg.src.includes('resumePlaceholder.jpg')) {
+          avatarImg.src = "pulledAva.gif";
+          setTimeout(() => {
+          avatarImg.src = "betterAva.png";
+          }, 350);
+       }
+      });
+    
+    
     // assign click events
   document.getElementById('avatar').addEventListener('click', () => {
     if (resumeImg.src.includes('resumePlaceholder.jpg')) {
       resumeImg.src = 'coolerPlaceholder.jpg'; 
     } else {
-    resumeImg.src = 'resumePlaceholder.jpg'; 
+      resumeImg.src = 'resumePlaceholder.jpg';
+
+      avatarImg.src = "pulledAva.gif";
+
+      setTimeout(() => {
+      avatarImg.src = "oopsAva.png";
+    }, 350);
+
   }});
   
-  document.getElementById('avatar').addEventListener('click', () => {
-
-  avatarImg.src = "pulledAva.gif";
-
-  setTimeout(() => {
-    avatarImg.src = "oopsAva.png";
-  }, 350);
-    
-    
-
-
-
-});
-    
+  
     
     
 
