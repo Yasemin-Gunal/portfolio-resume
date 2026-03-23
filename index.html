@@ -259,8 +259,11 @@ resumeImg.onload = function () {  //refresh on load (?)
     
     // assign click events
   document.getElementById('avatar').addEventListener('click', () => {
-  resumeImg.src = 'coolerPlaceholder.jpg';
-  });
+    if (resumeImg.src.includes('resumePlaceholder.jpg')) {
+      resumeImg.src = 'coolerPlaceholder.jpg'; 
+    } else {
+    resumeImg.src = 'resumePlaceholder.jpg'; 
+  }});
   
   document.getElementById('avatar').addEventListener('click', () => {
 
