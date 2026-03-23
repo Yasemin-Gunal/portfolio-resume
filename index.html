@@ -92,11 +92,7 @@
         width: 490px;
       }
       
-       #resume {
-        margin-top: -140px;
-        width: 490px;
-      }
-     
+ 
       
       
       /* MAIN CONTENT END */
@@ -245,7 +241,7 @@
   const avatarImg = document.getElementById('avatar');
     
     
-resumeImg.onload = function () {  //refresh on load (?)
+avatarImg.onload = function () {  //refresh on load (?)
 
  if (avatarImg.src.includes("pullingAva.gif")) { 
   avatarImg.style.width = "170px"; 
@@ -261,10 +257,13 @@ resumeImg.onload = function () {  //refresh on load (?)
     
     document.getElementById('avatar').addEventListener('click', () => {
        if (resumeImg.src.includes('resumePlaceholder.jpg')) {
+         
+          avatarImg.style.width = "2200px";
           avatarImg.src = "fellAva.gif";
+         
           setTimeout(() => {
           avatarImg.src = "betterAva.png";
-          }, 2000);
+          }, 1600);
        }
       });
     
@@ -275,12 +274,13 @@ resumeImg.onload = function () {  //refresh on load (?)
       resumeImg.src = 'coolerPlaceholder.jpg'; 
     } else {
       resumeImg.src = 'resumePlaceholder.jpg';
-
+      
+      avatarImg.style.width = "2200px";
       avatarImg.src = "fellAva.gif";
 
       setTimeout(() => {
       avatarImg.src = "oopsAva.png";
-    }, 2000);
+    }, 1600);
 
   }});
   
