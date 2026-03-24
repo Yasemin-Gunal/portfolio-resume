@@ -70,6 +70,7 @@
         position: relative;
         /*border: 1px solid red;*/
         top: 10px;
+        cursor: pointer;
       }
       
       #header li:hover {
@@ -77,10 +78,6 @@
       }
       /* HEADER END */
       
-      
-      #yeg {
-        margin: -550px 0 0 0;
-      }
       
       /* MAIN CONTENT */
       #mainContent {
@@ -165,7 +162,7 @@
       #avatar{
         
         transform: translate( 250px, -230px);      
-            
+        cursor: pointer;
         z-index: 1000;         
       }
     
@@ -178,7 +175,7 @@
     <div id="header">
       <ul>
         <b>
-        <li style="color:#CC2F5C;" id="hometxt">HOME</li>
+        <li id="hometxt">HOME</li>
         <li>ABOUT ME</li>
         <li class="dropdown">
           WORK
@@ -190,7 +187,7 @@
             <li ><a href="#">OTHER</a></li>
           </ul>
           </li>
-        <li id="resumetxt">RESUME</li>
+        <li id="resumetxt" style="color:#CC2F5C;">RESUME</li>
         </b>
       </ul>
      </div>
@@ -241,9 +238,24 @@
   // get the avatar image
   const resumeImg = document.getElementById('resume');
   const avatarImg = document.getElementById('avatar');
-  const resumeTxt = document.getElementById('resumetxt');
-    
+  let avatarVisible = 1;
 
+
+  document.addEventListener("keydown", function(event) {
+
+    if (!avatarImg.src.includes('pullingAva.gif') && (event.key === "h" || event.key === "H")) {
+      avatarVisible = 1 - avatarVisible;
+      avatarImg.style.opacity = avatarVisible;
+      
+    if (avatarVisible === 1) {
+      avatarImg.style.pointerEvents = "auto";
+    } else {
+      avatarImg.style.pointerEvents = "none";
+    }
+      
+    }
+  });
+    
 
 avatarImg.addEventListener('click', () => {
 
