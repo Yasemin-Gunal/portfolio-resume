@@ -190,7 +190,7 @@
             <li ><a href="#">OTHER</a></li>
           </ul>
           </li>
-        <li>RESUME</li>
+        <li id="resumetxt">RESUME</li>
         </b>
       </ul>
      </div>
@@ -241,15 +241,15 @@
   // get the avatar image
   const resumeImg = document.getElementById('resume');
   const avatarImg = document.getElementById('avatar');
+  const resumeTxt = document.getElementById('resumetxt');
     
-    
-  
-    
+
+
 avatarImg.addEventListener('click', () => {
 
   if (resumeImg.src.includes('resumePlaceholder.jpg')) {
     
-    avatarImg.style.transform = "translate(250px, -230px)";
+    avatarImg.style.transform = "translate(250px, -230px)"; //return gif positon
     resumeImg.src = 'coolerPlaceholder.jpg';
 
     avatarImg.src = "fellAva.gif";
@@ -260,14 +260,15 @@ avatarImg.addEventListener('click', () => {
     }, 1600);
 
     setTimeout(() => {
+      avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
       avatarImg.style.opacity = "1";
       avatarImg.src = "betterAva.png";
       avatarImg.style.width = "150px";
-      avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
+      
     }, 1900);
 
   } else {
-    avatarImg.style.transform = "translate(250px, -230px)";
+    avatarImg.style.transform = "translate(250px, -230px)";//return gif positon
     resumeImg.src = 'resumePlaceholder.jpg';
 
     avatarImg.src = "fellAva.gif";
@@ -283,11 +284,15 @@ avatarImg.addEventListener('click', () => {
       avatarImg.src = "boringAva.png";
       avatarImg.style.width = "150px";
     }, 1900);
-
   }
-
-});
   
+  if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')); {
+      document.getElementById('resumetxt').addEventListener('click', () => {
+        avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
+        avatarImg.src = '2clickResume.png';  
+      });
+  }
+});
   
     
     
