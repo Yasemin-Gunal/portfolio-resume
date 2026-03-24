@@ -90,7 +90,7 @@
       
       
       #resume {
-        margin-top: -240px;
+        margin-top: 30px;
         width: 490px;
       }
       
@@ -164,7 +164,7 @@
 
       #avatar{
         
-        transform: translate( 280px, 490px);      
+        transform: translate( 250px, -230px);      
             
         z-index: 1000;         
       }
@@ -196,8 +196,6 @@
      </div>
     
     
-    <img src="pullingAva.gif" id="avatar" width="170px" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
-    
   
     
     <div id="mainContent">
@@ -207,6 +205,8 @@
         </div>
 
     </div>
+    
+     <img src="pullingAva.gif" id="avatar" width="170px" z-index="1000" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
     
     
     
@@ -248,7 +248,8 @@
 avatarImg.addEventListener('click', () => {
 
   if (resumeImg.src.includes('resumePlaceholder.jpg')) {
-
+    
+    avatarImg.style.transform = "translate(250px, -230px)";
     resumeImg.src = 'coolerPlaceholder.jpg';
 
     avatarImg.src = "fellAva.gif";
@@ -262,10 +263,11 @@ avatarImg.addEventListener('click', () => {
       avatarImg.style.opacity = "1";
       avatarImg.src = "betterAva.png";
       avatarImg.style.width = "150px";
+      avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
     }, 1900);
 
   } else {
-
+    avatarImg.style.transform = "translate(250px, -230px)";
     resumeImg.src = 'resumePlaceholder.jpg';
 
     avatarImg.src = "fellAva.gif";
@@ -276,6 +278,7 @@ avatarImg.addEventListener('click', () => {
     }, 1600);
 
     setTimeout(() => {
+      avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
       avatarImg.style.opacity = "1";
       avatarImg.src = "oopsAva.png";
       avatarImg.style.width = "150px";
