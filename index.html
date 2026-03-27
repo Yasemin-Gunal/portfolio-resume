@@ -215,7 +215,7 @@
      <img src="pullingAva.gif" id="avatar" width="170px" z-index="1000" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
     
      
-    <p id="resumeLink"><a href="#">CLICK TO DOWNLOAD RESUME!</a></p>
+    <p id="resumeLink"><a href="https://drive.google.com/file/d/19nAjBdMIJ-G0LckQ9S4q4Zz0gFIqJEFs/view?usp=sharing" target="_blank">CLICK TO OPEN RESUME!</a></p>
     
     <div id="footer">
       <h2>
@@ -247,6 +247,7 @@
   // get the avatar image
   const resumeImg = document.getElementById('resume');
   const avatarImg = document.getElementById('avatar');
+  const resumeLink = document.getElementById('resumeLink');
   let avatarVisible = 1;
 
 
@@ -270,6 +271,11 @@ avatarImg.addEventListener('click', () => {
 
   if (resumeImg.src.includes('resume.jpg')) {
     
+    resumeLink.style.opacity = "0";
+    resumeLink.dataset.href = resumeLink.href;
+    resumeLink.removeAttribute("href");
+    resumeLink.style.pointerEvents = "none";
+    
     avatarImg.style.transform = "translate(260px, -230px)"; //return gif positon
     resumeImg.src = 'coolerPlaceholder.jpg';
 
@@ -289,6 +295,10 @@ avatarImg.addEventListener('click', () => {
     }, 1900);
 
   } else {
+    resumeLink.style.opacity = "1";
+    resumeLink.href = resumeLink.dataset.href;
+    resumeLink.style.pointerEvents = "auto";
+    
     avatarImg.style.transform = "translate(260px, -230px)";//return gif positon
     resumeImg.src = 'resume.jpg';
 
@@ -307,7 +317,7 @@ avatarImg.addEventListener('click', () => {
     }, 1900);
   }
   
-  if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')); {
+  if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')) {
       document.getElementById('resumetxt').addEventListener('click', () => {
         avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
         avatarImg.src = '2clickResume.png';  
