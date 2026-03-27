@@ -91,8 +91,14 @@
         width: 490px;
       }
       
+      #resumeLink {
+        margin: 0px auto;
+      }
  
-      
+      #resumeLink a{
+        color: #65FFDB;
+        font-family: Krub;
+      }
       
       /* MAIN CONTENT END */
       
@@ -161,9 +167,10 @@
 
       #avatar{
         
-        transform: translate( 250px, -230px);      
+        transform: translate( 260px, -230px);      
         cursor: pointer;
-        z-index: 1000;         
+        z-index: 1000;   
+
       }
     
     </style>
@@ -205,8 +212,8 @@
     
      <img src="pullingAva.gif" id="avatar" width="170px" z-index="1000" alt="cartoon drawing of this persons portfolio, saying 'welcome, welcome!'">
     
-    
-    
+     
+    <p id="resumeLink"><a href="#">CLICK TO DOWNLOAD RESUME!</a></p>
     
     <div id="footer">
       <h2>
@@ -259,9 +266,9 @@
 
 avatarImg.addEventListener('click', () => {
 
-  if (resumeImg.src.includes('resumePlaceholder.jpg')) {
+  if (resumeImg.src.includes('resume.jpg')) {
     
-    avatarImg.style.transform = "translate(250px, -230px)"; //return gif positon
+    avatarImg.style.transform = "translate(260px, -230px)"; //return gif positon
     resumeImg.src = 'coolerPlaceholder.jpg';
 
     avatarImg.src = "fellAva.gif";
@@ -272,7 +279,7 @@ avatarImg.addEventListener('click', () => {
     }, 1600);
 
     setTimeout(() => {
-      avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
+      avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
       avatarImg.style.opacity = "1";
       avatarImg.src = "betterAva.png";
       avatarImg.style.width = "150px";
@@ -280,8 +287,8 @@ avatarImg.addEventListener('click', () => {
     }, 1900);
 
   } else {
-    avatarImg.style.transform = "translate(250px, -230px)";//return gif positon
-    resumeImg.src = 'resumePlaceholder.jpg';
+    avatarImg.style.transform = "translate(260px, -230px)";//return gif positon
+    resumeImg.src = 'resume.jpg';
 
     avatarImg.src = "fellAva.gif";
     avatarImg.style.width = "240px";
@@ -291,7 +298,7 @@ avatarImg.addEventListener('click', () => {
     }, 1600);
 
     setTimeout(() => {
-      avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
+      avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
       avatarImg.style.opacity = "1";
       avatarImg.src = "boringAva.png";
       avatarImg.style.width = "150px";
@@ -300,7 +307,7 @@ avatarImg.addEventListener('click', () => {
   
   if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')); {
       document.getElementById('resumetxt').addEventListener('click', () => {
-        avatarImg.style.transform = "translate(250px, -290px)"; // move up to match gifs
+        avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
         avatarImg.src = '2clickResume.png';  
       });
   }
