@@ -257,7 +257,7 @@
 
   document.addEventListener("keydown", function(event) {
 
-    if (!avatarImg.src.includes('pullingAva.gif') && (event.key === "h" || event.key === "H")) {
+    if (!avatarImg.src.includes('pullingAva.gif') && (event.key === "h" || event.key === "H")) { // hide ava when press H
       avatarVisible = 1 - avatarVisible;
       avatarImg.style.opacity = avatarVisible;
       
@@ -271,20 +271,24 @@
   });
     
 
-avatarImg.addEventListener('click', () => {
-
-  if (resumeImg.src.includes('resume.jpg')) {
+avatarImg.addEventListener('click', () => { 
+   
+  if (avatarImg.src.includes('pullingAva.gif')) {
     
-    resumeLink.style.opacity = "0";
-    resumeLink.dataset.href = resumeLink.href;
-    resumeLink.removeAttribute("href");
-    resumeLink.style.pointerEvents = "none";
+    // resumeLink.style.opacity = "0";
+    // resumeLink.dataset.href = resumeLink.href;
+    resumeLink.style.display = "none";
+    // resumeLink.removeAttribute("href");
+    // resumeLink.style.pointerEvents = "none";
     
     avatarImg.style.transform = "translate(260px, -230px)"; //return gif positon
-    resumeImg.src = 'coolerPlaceholder.jpg';
-
+    
     avatarImg.src = "fellAva.gif";
     avatarImg.style.width = "240px";
+    
+    setTimeout(() => {
+      resumeImg.style.opacity = "0";
+    }, 600);
     
      setTimeout(() => {
       avatarImg.style.opacity = "0";
@@ -296,37 +300,40 @@ avatarImg.addEventListener('click', () => {
       avatarImg.src = "betterAva.png";
       avatarImg.style.width = "150px";
       
-    }, 1900);
-
-  } else {
-    resumeLink.style.opacity = "1";
-    resumeLink.href = resumeLink.dataset.href;
-    resumeLink.style.pointerEvents = "auto";
-    
-    avatarImg.style.transform = "translate(260px, -230px)";//return gif positon
-    resumeImg.src = 'resume.jpg';
-
-    avatarImg.src = "fellAva.gif";
-    avatarImg.style.width = "240px";
-    
-    setTimeout(() => {
-      avatarImg.style.opacity = "0";
-    }, 1600);
-
-    setTimeout(() => {
-      avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
-      avatarImg.style.opacity = "1";
-      avatarImg.src = "boringAva.png";
-      avatarImg.style.width = "150px";
+      resumeImg.style.display = "none";
+      
     }, 1900);
   }
+//   } else {
+//     resumeLink.style.opacity = "1";
+//     resumeLink.href = resumeLink.dataset.href;
+//     resumeLink.style.pointerEvents = "auto";
+    
+//     avatarImg.style.transform = "translate(260px, -230px)";//return gif positon
+//     resumeImg.src = 'resume.jpg';
+
+//     avatarImg.src = "fellAva.gif";
+//     avatarImg.style.width = "240px";
+    
+//     setTimeout(() => {
+//       avatarImg.style.opacity = "0";
+//     }, 1600);
+
+//     setTimeout(() => {
+//       avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
+//       avatarImg.style.opacity = "1";
+//       avatarImg.src = "boringAva.png";
+//       avatarImg.style.width = "150px";
+//     }, 1900);
+//   }
   
-  if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')) {
-      document.getElementById('resumetxt').addEventListener('click', () => {
-        avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
-        avatarImg.src = '2clickResume.png';  
-      });
-  }
+  
+  // if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')) {
+  //     document.getElementById('resumetxt').addEventListener('click', () => {
+  //       avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
+  //       avatarImg.src = '2clickResume.png';  
+  //     });
+  // }
 });
   
     
