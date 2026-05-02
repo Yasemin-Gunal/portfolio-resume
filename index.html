@@ -30,6 +30,7 @@
         color: #CC2F5C;
         font-size: 65px;
         width: 50%;
+        margin: 0 auto;
       }
       
       
@@ -38,6 +39,7 @@
         color: #65FFDB;
         font-size: 90px;
         margin-top: 60px;
+        margin: 0 auto;
       }
       
       
@@ -46,6 +48,8 @@
         color: #65FFDB;
         font-size: 25px;
         width: 50%; 
+        margin: 0 auto;
+        text-align: left;
       }
       /* general styling END */
       
@@ -84,7 +88,6 @@
    
         margin: 0 auto;
       }
-      
       
       #resume {
         margin-top: 30px;
@@ -177,7 +180,18 @@
         transform: translate( 260px, -230px);      
         cursor: pointer;
         z-index: 1000;   
-
+      }
+      
+      /* MAIN GRID */
+      
+      #mainGrid{
+          display: grid;
+        grid-template-columns: 50% 50%; 
+        
+      }
+      
+      .gridItem{
+ 
       }
     
     </style>
@@ -211,7 +225,7 @@
     <div id="mainContent">
      
         <div class="content">   
-          <img src="resume.jpg" id="resume" alt="Image of 'Yasemin Gunals' resume">
+          <img src="resume.jpg" id="resume" alt="Image of 'Yasemin Gunals'resume">
         </div>
 
     </div>
@@ -221,7 +235,85 @@
      
     <p id="resumeLink"><a href="https://drive.google.com/file/d/19nAjBdMIJ-G0LckQ9S4q4Zz0gFIqJEFs/view?usp=sharing" target="_blank">CLICK TO OPEN RESUME!</a></p>
     
-    <div id="footer">
+    
+    <div id="hidden">
+      
+      <h1>
+        YASEMIN EMIRA GUNAL
+      </h1>
+      
+      <div id="mainGrid">
+        
+      <div id="bio" class="gridItem">
+        <h3>
+          BIO
+        </h3>
+        <p>
+          Yo! I'm Yasemin. I often find myself in creative and leadership roles. I have a business oriented mindset with a long history of arts and design. I enjoy collaboration and working with new people. I am looking to tell stories with my designs and ideas.
+        </p>
+      </div>
+        
+      <div id="info" class="gridItem">
+        <p>
+            Waterloo, Ontario<br>
+            Canada<br>
+            519-589-5380<br>
+            yasemin.e.gunal@gmail.com
+        </p>
+      </div>
+        
+        <div id="Exp" class="gridItem">
+          
+          <h3>
+            EXPIRIENCE
+          </h3>
+          
+          <p>
+            insert shit
+          </p>
+ 
+      </div>
+        
+       <div id="skills" class="gridItem">
+        <h3>
+          SKILLS
+        </h3>
+        <ul>
+          <li>User interface development</li>
+          <li>Digital illustrator</li>
+          <li>Self employed business experience</li>
+          <li>AI tool education &amp; proficiency</li>
+          <li>Adobe Creative Suite</li>
+          <li>Figma &amp; FigJam</li>
+          <li>HTML &amp; JavaScript</li>
+          <li>Leadership</li>
+          <li>Video editing</li>
+          <li>Youth education</li>
+        </ul>
+        
+        <h3>
+          EDUCATION
+        </h3>
+        
+        <p>
+          University of Waterloo * January 2024 - Present <br>
+          Second year student towards Bachelor of Global Business and Digital Arts degree.<br>
+          <br>
+          Waterloo Collegiate Institution * 2020 - 2024 <br>
+          Ontario Secondary School Diploma.
+        </p>
+        
+        </div>
+        
+      </div>
+      
+      
+    </div>
+    
+    
+    
+    
+<!--     <div id="footer">
       <h2>
         CONTACT ME!
       </h2>
@@ -239,7 +331,7 @@
        <a href="https://www.pexels.com/photo/blue-pink-and-white-andromeda-galaxy-way-110854/" target="_blank" title="starry header image"> Blue Pink and White Andromeda Galaxy Way by Miriam Espacio - Pexels</a>
       </div> 
     </div>
-    
+     -->
     
   </body>
   
@@ -295,12 +387,12 @@ avatarImg.addEventListener('click', () => {
     }, 1600);
 
     setTimeout(() => {
-      avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
-      avatarImg.style.opacity = "1";
-      avatarImg.src = "betterAva.png";
-      avatarImg.style.width = "150px";
-      
+      // avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
+      // avatarImg.style.opacity = "1";
+      // avatarImg.src = "betterAva.png";
+      // avatarImg.style.width = "150px";
       resumeImg.style.display = "none";
+      avatarImg.style.display = "none";
       
     }, 1900);
   }
