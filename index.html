@@ -27,10 +27,11 @@
       
       h1 {
         font-family: Koho; 
-        color: #65FFDB;
+        color: #CC2F5C;
         font-size: 90px;
         margin-top: 60px;
         margin: 0 auto;
+        text-align: center;
       }
       
         
@@ -39,6 +40,7 @@
         color: #CC2F5C;
         font-size: 65px;
         width: 50%;
+        text-align: center;
         margin: 0 auto;
       }
       
@@ -47,6 +49,7 @@
         color: #65FFDB;
         font-size: 35px;
         margin: 0 auto;
+        text-align: center;
       }
       
       li {
@@ -54,12 +57,13 @@
         font-family: Krub;
         font-size: 25px;
         margin: 0 auto;
-        text-align: left;
+
         
       }
       
-      
-
+      a {
+        color: #65FFDB;
+      }
       
       p { 
         font-family: Krub;
@@ -201,16 +205,8 @@
       
       /* MAIN GRID */
       
-      #bioGrid{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        padding: 40px 300px 0px;
-  
-      }
-    
-      .bioGridItem{
-        margin: auto auto;
-        padding-left: 100px;
+      #bioSection p{
+        text-align: center;
       }
       
       #mainGrid{
@@ -219,13 +215,29 @@
         margin: 0 auto;
         padding: 100px 300px;
         
-        column-gap: 40px;
+        column-gap: 70px;
         
       }
       
-      .gridItem{
-        margin: auto auto;
+      #exp li {
+        text-align: left;
       }
+      
+      #eduList {
+        text-align: left;
+      }
+      
+      #skills li {
+        text-align: center;
+        margin: 30px auto;
+        list-style: none;
+      }
+      
+      .gridItem{
+        margin: 0px auto;
+      }
+      
+
       
     </style>
     
@@ -275,23 +287,18 @@
         YASEMIN EMIRA GUNAL
       </h1>
       
-        <h2>
-          BIO
-        </h2>
+      <br>
       
-      <div id="bioGrid">
-      <div id="bio" class="bioGridItem">
-        <p style="text-align:center;">
-          Hey! I'm Yasemin. I often find myself in creative and leadership roles. I have a business oriented mindset with a long history of arts and design. I enjoy collaboration and working with new people. I am looking to tell stories with my designs and ideas.
+    <div id="bioSection">
+      <div id="info">
+        <p>
+          <b> Waterloo, Ontario Canada • <a href="https://wa.me/15195895380">519-589-5380</a> • <a href="mailto:yasemin.e.gunal@gmail.com" target="_blank"> yasemin.e.gunal@gmail.com </a> </b>
         </p>
       </div>
-        
-      <div id="info" class="bioGridItem">
-        <p style="color: #CC2F5C; text-align:center;">
-            Waterloo, Ontario<br>
-            Canada<br>
-            519-589-5380<br>
-            yasemin.e.gunal@gmail.com
+      <br>
+      <div id="bio">
+        <p>
+          Hey! I'm Yasemin. I often find myself in creative and leadership roles. I have a business oriented mindset with a long history of arts and design. I enjoy collaboration and working with new people. I am looking to tell stories with my designs and ideas.
         </p>
       </div>
       </div>
@@ -357,11 +364,13 @@
             
       </div>
         
-       <div id="skills" class="gridItem">
+       <div class="gridItem">
+         <div  id="skills">
+           
         <h2>
           SKILLS
         </h2>
-        <ul style="list-style: none; text-align: right;">
+        <ul>
           <h3>
           <li>User interface development</li>
           <li>Digital illustrator</li>
@@ -375,16 +384,18 @@
           <li>Youth education</li>
           </h3>
         </ul>
-        
+        </div>
+  
+          
         <h2>
           EDUCATION
         </h2>
         
-        <ul style="list-style: none;">
+        <ul style="list-style: none;" id="eduList">
           
           <li> 
             <h3>University of Waterloo</h3><br>
-           <div class="expDates" style="text-align: right"> Jan 2024 - Present </div> <br>
+           <div class="expDates" style="text-align: right">Jan 2024 - Present</div> <br>
            <ul>
              <li>Second year student towards Bachelor of Global Business and Digital Arts degree.</li>
              <br>
@@ -393,14 +404,22 @@
           
           <li> 
             <h3>Waterloo Collegiate Institution</h3><br>
-           <div class="expDates" style="text-align: right"> 2020 - 2024 </div> <br>
+           <div class="expDates" style="text-align: right">2020 - 2024</div> <br>
            <ul>
              <li>Ontario Secondary School Diploma.</li>
              <br>
             </ul>
           </li>
-          
         </ul>
+        
+         
+         <h2>
+           REFERENCES
+         </h2>
+         <br>
+         <p style="text-align: center;">
+           Available upon request.
+         </p>
         
         </div>
       </div>
@@ -409,7 +428,7 @@
     
     
     
-<!--     <div id="footer">
+    <div id="footer">
       <h2>
         CONTACT ME!
       </h2>
@@ -427,7 +446,7 @@
        <a href="https://www.pexels.com/photo/blue-pink-and-white-andromeda-galaxy-way-110854/" target="_blank" title="starry header image"> Blue Pink and White Andromeda Galaxy Way by Miriam Espacio - Pexels</a>
       </div> 
     </div>
-     -->
+    
     
   </body>
   
