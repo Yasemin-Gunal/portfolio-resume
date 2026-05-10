@@ -278,7 +278,7 @@
      <img src="pullingAva.gif" id="avatar" width="170px" z-index="1000" alt="cartoon drawing of 'Yasemin Gunal' commenting on their profile"> <!--I wanted to specify what each image was saying but due to the way i made this, no matter what image shows it will deliver the same alt tag -->
     
      
-    <p id="resumeLink"><a href="https://drive.google.com/file/d/19nAjBdMIJ-G0LckQ9S4q4Zz0gFIqJEFs/view?usp=sharing" target="_blank">CLICK TO OPEN RESUME!</a></p>
+    <p id="resumeLink" style="text-align: center;"><a href="https://drive.google.com/file/d/19nAjBdMIJ-G0LckQ9S4q4Zz0gFIqJEFs/view?usp=sharing" target="_blank">...Or click here to open resume page!</a></p>
     
     
     <div id="hidden">
@@ -459,9 +459,12 @@
   const resumeImg = document.getElementById('resume');
   const avatarImg = document.getElementById('avatar');
   const resumeLink = document.getElementById('resumeLink');
+  const mainContent = document.getElementById('hidden');
   let avatarVisible = 1;
 
 
+  mainContent.style.display = "none";
+    
   document.addEventListener("keydown", function(event) {
 
     if (!avatarImg.src.includes('pullingAva.gif') && (event.key === "h" || event.key === "H")) { // hide ava when press H
@@ -508,6 +511,7 @@ avatarImg.addEventListener('click', () => {
       // avatarImg.style.width = "150px";
       resumeImg.style.display = "none";
       avatarImg.style.display = "none";
+        mainContent.style.display = "block";
       
     }, 1900);
   }
