@@ -112,6 +112,7 @@
       #resume {
         margin-top: 30px;
         width: 490px;
+        transition: opacity 0.5s ease;
       }
       
       #resumeLink {
@@ -473,7 +474,7 @@
   const mainContent = document.getElementById('hidden');
   let avatarVisible = 1;
 
-
+ 
   mainContent.style.display = "none";
     
   document.addEventListener("keydown", function(event) {
@@ -516,13 +517,12 @@ avatarImg.addEventListener('click', () => {
     }, 1600);
 
     setTimeout(() => {
-      // avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
-      // avatarImg.style.opacity = "1";
-      // avatarImg.src = "betterAva.png";
-      // avatarImg.style.width = "150px";
+      
+      resumeImg.style.opacity = "0";
       resumeImg.style.display = "none";
       avatarImg.style.display = "none";
-        mainContent.style.display = "block";
+      mainContent.style.display = "block";
+      
       
     }, 1900);
   }
