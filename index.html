@@ -46,7 +46,6 @@
         font-family: Koho; 
         color: #65FFDB;
         font-size: 35px;
-/*         width: 50%; */
         margin: 0 auto;
       }
       
@@ -66,9 +65,8 @@
         font-family: Krub;
         color: #65FFDB;
         font-size: 25px;
-        width: 50%; 
         margin: 0 auto;
-        text-align: right;
+        text-align: left;
       }
       /* general styling END */
       
@@ -203,16 +201,32 @@
       
       /* MAIN GRID */
       
+      #bioGrid{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 40px 300px 0px;
+  
+      }
+    
+      .bioGridItem{
+        margin: auto auto;
+        padding-left: 100px;
+      }
+      
       #mainGrid{
-          display: grid;
-        grid-template-columns: 50% 50%; 
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin: 0 auto;
+        padding: 100px 300px;
+        
+        column-gap: 40px;
         
       }
       
       .gridItem{
- 
+        margin: auto auto;
       }
-    
+      
     </style>
     
       
@@ -261,26 +275,28 @@
         YASEMIN EMIRA GUNAL
       </h1>
       
-      <div id="mainGrid">
-        
-      <div id="bio" class="gridItem">
-        <h3>
+        <h2>
           BIO
-        </h3>
-        <p>
-          Yo! I'm Yasemin. I often find myself in creative and leadership roles. I have a business oriented mindset with a long history of arts and design. I enjoy collaboration and working with new people. I am looking to tell stories with my designs and ideas.
+        </h2>
+      
+      <div id="bioGrid">
+      <div id="bio" class="bioGridItem">
+        <p style="text-align:center;">
+          Hey! I'm Yasemin. I often find myself in creative and leadership roles. I have a business oriented mindset with a long history of arts and design. I enjoy collaboration and working with new people. I am looking to tell stories with my designs and ideas.
         </p>
       </div>
         
-      <div id="info" class="gridItem">
-        <p style="color: #CC2F5C">
+      <div id="info" class="bioGridItem">
+        <p style="color: #CC2F5C; text-align:center;">
             Waterloo, Ontario<br>
             Canada<br>
             519-589-5380<br>
             yasemin.e.gunal@gmail.com
         </p>
       </div>
-        
+      </div>
+      
+      <div id="mainGrid">
         <div id="exp" class="gridItem">
           
           <h2>
@@ -337,19 +353,16 @@
             </ul>
           </li>
           
-          
-          
-          </ul>
+        </ul>
             
-        
- 
       </div>
         
        <div id="skills" class="gridItem">
         <h2>
           SKILLS
         </h2>
-        <ul style="list-style: none; text-align: center;">
+        <ul style="list-style: none; text-align: right;">
+          <h3>
           <li>User interface development</li>
           <li>Digital illustrator</li>
           <li>Self employed business experience</li>
@@ -360,25 +373,37 @@
           <li>Leadership</li>
           <li>Video editing</li>
           <li>Youth education</li>
+          </h3>
         </ul>
         
         <h2>
           EDUCATION
         </h2>
         
-        <p>
-          University of Waterloo * January 2024 - Present <br>
-          Second year student towards Bachelor of Global Business and Digital Arts degree.<br>
-          <br>
-          Waterloo Collegiate Institution * 2020 - 2024 <br>
-          Ontario Secondary School Diploma.
-        </p>
+        <ul style="list-style: none;">
+          
+          <li> 
+            <h3>University of Waterloo</h3><br>
+           <div class="expDates" style="text-align: right"> Jan 2024 - Present </div> <br>
+           <ul>
+             <li>Second year student towards Bachelor of Global Business and Digital Arts degree.</li>
+             <br>
+            </ul>
+          </li>
+          
+          <li> 
+            <h3>Waterloo Collegiate Institution</h3><br>
+           <div class="expDates" style="text-align: right"> 2020 - 2024 </div> <br>
+           <ul>
+             <li>Ontario Secondary School Diploma.</li>
+             <br>
+            </ul>
+          </li>
+          
+        </ul>
         
         </div>
-        
       </div>
-      
-      
     </div>
     
     
