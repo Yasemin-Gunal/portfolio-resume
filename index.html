@@ -205,6 +205,14 @@
         z-index: 1000;   
       }
       
+      #avatar2{
+        position: fixed; 
+        bottom: 0px;        
+        right: 0px;           
+        z-index: 1000;
+        cursor: pointer;
+      }
+      
       /* MAIN GRID */
       
       #bioSection p{
@@ -274,7 +282,8 @@
      </div>
     
     
-  
+    <img src="betterAva.png" id="avatar2" width="150px" alt="cartoon drawing of 'Yasemin Gunal' commenting on their profile"> <!--I wanted to specify what each image was saying but due to the way i made this, no matter what image shows it will deliver the same alt tag -->
+    
     
     <div id="mainContent">
      
@@ -292,7 +301,7 @@
     
     <div id="hidden">
       
-      <h1>
+      <h1 id="yeg" style="cursor:pointer;">
         YASEMIN EMIRA GUNAL
       </h1>
       
@@ -469,38 +478,44 @@
   // get the avatar image
   const resumeImg = document.getElementById('resume');
   const avatarImg = document.getElementById('avatar');
-  const resumeLink = document.getElementById('resumeLink');
+  const avatarImg2 = document.getElementById('avatar2');
   const mainContent = document.getElementById('hidden');
   let avatarVisible = 1;
 
  
   mainContent.style.display = "none";
+  avatarImg2.style.display = "none";
     
   document.addEventListener("keydown", function(event) {
-
-    if (!avatarImg.src.includes('pullingAva.gif') && (event.key === "h" || event.key === "H")) { // hide ava when press H
+    if ((avatarImg2.style.display === "block") && (event.key === "h" || event.key === "H")) { // hide ava when press H
       avatarVisible = 1 - avatarVisible;
-      avatarImg.style.opacity = avatarVisible;
+      avatarImg2.style.opacity = avatarVisible;
       
     if (avatarVisible === 1) {
-      avatarImg.style.pointerEvents = "auto";
+      avatarImg2.style.pointerEvents = "auto";
     } else {
-      avatarImg.style.pointerEvents = "none";
+      avatarImg2.style.pointerEvents = "none";
     }
-      
     }
   });
+    
+  document.getElementById('avatar2').addEventListener('click', (e) => {
+  e.stopPropagation();  
+  avatarImg2.src = 'hideAva.png';
+  });
+    
+   document.getElementById('yeg').addEventListener('click', (e) => {
+  e.stopPropagation();  
+  avatarImg2.src = 'yegava.png';
+  });
+  
     
 
 avatarImg.addEventListener('click', () => { 
    
   if (avatarImg.src.includes('pullingAva.gif')) {
     
-    // resumeLink.style.opacity = "0";
-    // resumeLink.dataset.href = resumeLink.href;
     resumeLink.style.display = "none";
-    // resumeLink.removeAttribute("href");
-    // resumeLink.style.pointerEvents = "none";
     
     avatarImg.style.transform = "translate(260px, -230px)"; //return gif positon
     
@@ -521,40 +536,12 @@ avatarImg.addEventListener('click', () => {
       resumeImg.style.display = "none";
       avatarImg.style.display = "none";
       mainContent.style.display = "block";
+      avatarImg2.style.display = "block";
       
       
     }, 1900);
   }
-//   } else {
-//     resumeLink.style.opacity = "1";
-//     resumeLink.href = resumeLink.dataset.href;
-//     resumeLink.style.pointerEvents = "auto";
-    
-//     avatarImg.style.transform = "translate(260px, -230px)";//return gif positon
-//     resumeImg.src = 'resume.jpg';
 
-//     avatarImg.src = "fellAva.gif";
-//     avatarImg.style.width = "240px";
-    
-//     setTimeout(() => {
-//       avatarImg.style.opacity = "0";
-//     }, 1600);
-
-//     setTimeout(() => {
-//       avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
-//       avatarImg.style.opacity = "1";
-//       avatarImg.src = "boringAva.png";
-//       avatarImg.style.width = "150px";
-//     }, 1900);
-//   }
-  
-  
-  // if (avatarImg.src.includes('betterAva.png') || avatarImg.src.includes('boringAva.png')) {
-  //     document.getElementById('resumetxt').addEventListener('click', () => {
-  //       avatarImg.style.transform = "translate(260px, -290px)"; // move up to match gifs
-  //       avatarImg.src = '2clickResume.png';  
-  //     });
-  // }
 });
   
     
